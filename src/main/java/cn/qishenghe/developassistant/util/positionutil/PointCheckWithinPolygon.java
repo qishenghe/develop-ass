@@ -68,11 +68,11 @@ public class PointCheckWithinPolygon {
 	private boolean check2(Point2D.Double point, List<Point2D.Double> polygon) {
 		Polygon p = new Polygon();
 	    final int TIMES = 1000;  
-	    for (Point2D.Double d : polygon) {  
-	        int x = (int) d.x * TIMES;  
-	        int y = (int) d.y * TIMES;  
+	    for (Point2D.Double d : polygon) {
+	        int x = (int) d.x * TIMES;
+	        int y = (int) d.y * TIMES;
 	        p.addPoint(x, y);  
-	    }  
+	    }
 	    int x = (int) point.x * TIMES;  
 	    int y = (int) point.y * TIMES;  
 	    return p.contains(x, y);

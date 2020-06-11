@@ -6,7 +6,7 @@ package cn.qishenghe.developassistant.util.positionutil;
 public class PointUtil {
 
     /**
-     * 百度 --> Gps
+     * 百度 -- Gps
      */
     public static Point bdToGps (Point point) {
         double lat = point.getLat();
@@ -18,7 +18,7 @@ public class PointUtil {
     }
 
     /**
-     * 高德 --> Gps
+     * 高德 -- Gps
      */
     public static Point gdToGps (Point point) {
         double lat = point.getLat();
@@ -30,7 +30,7 @@ public class PointUtil {
     }
 
     /**
-     * Gps --> 百度
+     * Gps -- 百度
      */
     public static Point gpsToBd (Point point) {
         double lat = point.getLat();
@@ -42,7 +42,7 @@ public class PointUtil {
     }
 
     /**
-     * Gps --> 高德
+     * Gps -- 高德
      */
     public static Point gpsToGd (Point point) {
         double lat = point.getLat();

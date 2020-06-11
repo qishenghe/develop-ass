@@ -162,9 +162,4 @@ public class QuartzUtil {
         return "[" + "class : " + clazz + "|" + "method : " + methodName + "|" + "cron" + cron + "]";
     }
 
-//    @Override
-//    public void execute(JobExecutionContext context) throws JobExecutionException {
-//        System.out.println("abc");
-//        runFunction(this.clazz, this.methodName, this.params);
-//    }
 }

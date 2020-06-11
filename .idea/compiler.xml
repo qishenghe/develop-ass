@@ -9,7 +9,7 @@
         <module name="DevelopAss" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="DevelopAss" target="1.8" />
     </bytecodeTargetLevel>
   </component>
