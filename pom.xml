@@ -124,7 +124,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
                     <!-- JDK -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -137,8 +136,6 @@
                             <encoding>UTF-8</encoding>
                         </configuration>
                     </plugin>
-
-
                 </plugins>
             </build>
             <distributionManagement>
