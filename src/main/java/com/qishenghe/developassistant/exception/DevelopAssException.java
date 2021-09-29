@@ -1,7 +1,5 @@
 package com.qishenghe.developassistant.exception;
 
-import lombok.Data;
-
 /**
  * DevelopAss异常
  *
@@ -14,7 +12,7 @@ public class DevelopAssException extends RuntimeException {
     /**
      * 全局异常前缀
      */
-    private static final String EXCEPTION_START_WITH = "Develop Ass Exception：";
+    private static final String EXCEPTION_START_WITH = "Develop Ass Exception : ";
 
     /**
      * 错误编码

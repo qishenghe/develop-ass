@@ -36,12 +36,12 @@ public class HttpUtil {
     /**
      * Construction
      */
-    public HttpUtil () {
+    public HttpUtil() {
         this.charset = "UTF-8";
         this.httpClient = HttpClients.createDefault();
     }
 
-    public HttpUtil (String charset) {
+    public HttpUtil(String charset) {
         this.charset = charset;
         this.httpClient = HttpClients.createDefault();
     }
@@ -149,9 +149,9 @@ public class HttpUtil {
         connection.setConnectTimeout(5000);
         connection.setReadTimeout(15000);
         // 设置通用的请求属性
-        if (header!=null) {
-            Iterator<Entry<String, String>> it =header.entrySet().iterator();
-            while(it.hasNext()){
+        if (header != null) {
+            Iterator<Entry<String, String>> it = header.entrySet().iterator();
+            while (it.hasNext()) {
                 Entry<String, String> entry = it.next();
 //                System.out.println(entry.getKey()+":"+entry.getValue());
                 connection.setRequestProperty(entry.getKey(), entry.getValue());
@@ -160,7 +160,7 @@ public class HttpUtil {
 
         connection.setRequestProperty("accept", "*/*");
         connection.setRequestProperty("connection", "Keep-Alive");
-        connection.setRequestProperty("user-agent","Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
+        connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
 
         // 建立实际的连接
         connection.connect();
@@ -196,7 +196,7 @@ public class HttpUtil {
         conn.setConnectTimeout(30000);
         conn.setReadTimeout(30000);
         // 设置通用的请求属性
-        if (header!=null) {
+        if (header != null) {
             for (Entry<String, Object> entry : header.entrySet()) {
                 conn.setRequestProperty(entry.getKey(), entry.getValue().toString());
             }
@@ -221,20 +221,20 @@ public class HttpUtil {
         while ((line = in.readLine()) != null) {
             result += line;
         }
-        if(out!=null){
+        if (out != null) {
             out.close();
         }
-        if(in!=null){
+        if (in != null) {
             in.close();
         }
         return result;
     }
 
     public static String post(JSONObject contentType, Map<String, Object> header, String path) {
-        String result="";
+        String result = "";
         try {
             HttpClient client = HttpClients.createDefault();
-            HttpPost post=new HttpPost(path);
+            HttpPost post = new HttpPost(path);
             for (String headerKey : header.keySet()) {
                 post.setHeader(headerKey, header.get(headerKey).toString());
             }
@@ -242,22 +242,22 @@ public class HttpUtil {
 //            post.addHeader("X-APP-Id", "pp8t336vCK9");//  这几个是设置header头的
 //            post.addHeader("X-APP-Key", "Cn0PboLmab");
 //            post.addHeader("X-CTG-Request-Id", "123");
-            StringEntity s=new StringEntity(contentType.toString(), "utf-8");
+            StringEntity s = new StringEntity(contentType.toString(), "utf-8");
             s.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
             post.setEntity(s);
             HttpResponse httpResponse = client.execute(post);
-            InputStream in=httpResponse.getEntity().getContent();
-            BufferedReader br=new BufferedReader(new InputStreamReader(in, "utf-8"));
-            StringBuilder strber=new StringBuilder();
-            String line=null;
-            while ((line=br.readLine())!=null) {
-                strber.append(line+"\n");
+            InputStream in = httpResponse.getEntity().getContent();
+            BufferedReader br = new BufferedReader(new InputStreamReader(in, "utf-8"));
+            StringBuilder strber = new StringBuilder();
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                strber.append(line + "\n");
 
             }
             in.close();
-            result=strber.toString();
-            if(httpResponse.getStatusLine().getStatusCode()!= HttpStatus.SC_OK){
-                result="服务器异常";
+            result = strber.toString();
+            if (httpResponse.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+                result = "服务器异常";
             }
         } catch (Exception e) {
             System.out.println("请求异常");
@@ -268,10 +268,10 @@ public class HttpUtil {
     }
 
     public static String get(Map<String, Object> header, String path) {
-        String result="";
+        String result = "";
         try {
             HttpClient client = HttpClients.createDefault();
-            HttpGet get=new HttpGet(path);
+            HttpGet get = new HttpGet(path);
             for (String headerKey : header.keySet()) {
                 get.setHeader(headerKey, header.get(headerKey).toString());
             }
@@ -279,18 +279,18 @@ public class HttpUtil {
 //            get.addHeader("X-APP-Key", "Cn0PboLmab");
 //            get.addHeader("X-CTG-Request-Id", "123");
             HttpResponse httpResponse = client.execute(get);
-            InputStream in=httpResponse.getEntity().getContent();
-            BufferedReader br=new BufferedReader(new InputStreamReader(in, "utf-8"));
-            StringBuilder strber=new StringBuilder();
-            String line=null;
-            while ((line=br.readLine())!=null) {
-                strber.append(line+"\n");
+            InputStream in = httpResponse.getEntity().getContent();
+            BufferedReader br = new BufferedReader(new InputStreamReader(in, "utf-8"));
+            StringBuilder strber = new StringBuilder();
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                strber.append(line + "\n");
 
             }
             in.close();
-            result=strber.toString();
-            if(httpResponse.getStatusLine().getStatusCode()!= HttpStatus.SC_OK){
-                result="服务器异常";
+            result = strber.toString();
+            if (httpResponse.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+                result = "服务器异常";
             }
         } catch (Exception e) {
             System.out.println("请求异常");

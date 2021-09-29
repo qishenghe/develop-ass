@@ -5,7 +5,6 @@ import com.qishenghe.developassistant.exception.DevelopAssException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * 时间处理工具
@@ -30,13 +29,13 @@ public class DateTimeUtil {
     public static long dateTimeToTimeStamp(String dateTime, String pattern) {
 
         Calendar calendar = Calendar.getInstance();
-        long timeStamp = 0L;
+        long timeStamp;
         try {
             calendar.setTime(new SimpleDateFormat(pattern).parse(dateTime));
             timeStamp = calendar.getTimeInMillis();
         } catch (ParseException e) {
             e.printStackTrace();
-            throw new DevelopAssException("时间转换异常，原因：" + e.getMessage());
+            throw new DevelopAssException("时间处理工具：异常：原因：" + e.getMessage());
         }
         return timeStamp;
     }

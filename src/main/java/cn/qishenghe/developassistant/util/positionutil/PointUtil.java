@@ -8,7 +8,7 @@ public class PointUtil {
     /**
      * 百度 -- Gps
      */
-    public static Point bdToGps (Point point) {
+    public static Point bdToGps(Point point) {
         double lat = point.getLat();
         double lng = point.getLng();
         double[] latLng = bd09_To_gps84(lat, lng);
@@ -20,7 +20,7 @@ public class PointUtil {
     /**
      * 高德 -- Gps
      */
-    public static Point gdToGps (Point point) {
+    public static Point gdToGps(Point point) {
         double lat = point.getLat();
         double lng = point.getLng();
         double[] latLng = gcj02_To_Gps84(lat, lng);
@@ -32,7 +32,7 @@ public class PointUtil {
     /**
      * Gps -- 百度
      */
-    public static Point gpsToBd (Point point) {
+    public static Point gpsToBd(Point point) {
         double lat = point.getLat();
         double lng = point.getLng();
         double[] latLng = gps84_To_bd09(lat, lng);
@@ -44,7 +44,7 @@ public class PointUtil {
     /**
      * Gps -- 高德
      */
-    public static Point gpsToGd (Point point) {
+    public static Point gpsToGd(Point point) {
         double lat = point.getLat();
         double lng = point.getLng();
         double[] latLng = gps84_To_Gcj02(lat, lng);
@@ -68,7 +68,7 @@ public class PointUtil {
      */
     private static double[] gps84_To_Gcj02(double lat, double lon) {
         if (outOfChina(lat, lon)) {
-            return new double[]{lat,lon};
+            return new double[]{lat, lon};
         }
         double dLat = transformLat(lon - 105.0, lat - 35.0);
         double dLon = transformLon(lon - 105.0, lat - 35.0);
@@ -102,7 +102,7 @@ public class PointUtil {
         double theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * x_pi);
         double tempLon = z * Math.cos(theta) + 0.0065;
         double tempLat = z * Math.sin(theta) + 0.006;
-        double[] gps = {tempLat,tempLon};
+        double[] gps = {tempLat, tempLon};
         return gps;
     }
 
@@ -115,23 +115,23 @@ public class PointUtil {
         double theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * x_pi);
         double tempLon = z * Math.cos(theta);
         double tempLat = z * Math.sin(theta);
-        double[] gps = {tempLat,tempLon};
+        double[] gps = {tempLat, tempLon};
         return gps;
     }
 
     /**
      * 将gps84转为bd09
      */
-    private static double[] gps84_To_bd09(double lat,double lon){
-        double[] gcj02 = gps84_To_Gcj02(lat,lon);
-        double[] bd09 = gcj02_To_Bd09(gcj02[0],gcj02[1]);
+    private static double[] gps84_To_bd09(double lat, double lon) {
+        double[] gcj02 = gps84_To_Gcj02(lat, lon);
+        double[] bd09 = gcj02_To_Bd09(gcj02[0], gcj02[1]);
         return bd09;
     }
 
     /**
      * 将bd09转为gps84
      */
-    private static double[] bd09_To_gps84(double lat, double lon){
+    private static double[] bd09_To_gps84(double lat, double lon) {
         double[] gcj02 = bd09_To_Gcj02(lat, lon);
         double[] gps84 = gcj02_To_Gps84(gcj02[0], gcj02[1]);
         //保留小数点后六位
@@ -151,6 +151,7 @@ public class PointUtil {
         ret += (160.0 * Math.sin(y / 12.0 * pi) + 320 * Math.sin(y * pi / 30.0)) * 2.0 / 3.0;
         return ret;
     }
+
     private static double transformLon(double x, double y) {
         double ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1
                 * Math.sqrt(Math.abs(x));
@@ -160,9 +161,10 @@ public class PointUtil {
                 * pi)) * 2.0 / 3.0;
         return ret;
     }
+
     private static double[] transform(double lat, double lon) {
         if (outOfChina(lat, lon)) {
-            return new double[]{lat,lon};
+            return new double[]{lat, lon};
         }
         double dLat = transformLat(lon - 105.0, lat - 35.0);
         double dLon = transformLon(lon - 105.0, lat - 35.0);
@@ -174,8 +176,9 @@ public class PointUtil {
         dLon = (dLon * 180.0) / (a / sqrtMagic * Math.cos(radLat) * pi);
         double mgLat = lat + dLat;
         double mgLon = lon + dLon;
-        return new double[]{mgLat,mgLon};
+        return new double[]{mgLat, mgLon};
     }
+
     private static boolean outOfChina(double lat, double lon) {
         if (lon < 72.004 || lon > 137.8347)
             return true;
@@ -184,10 +187,11 @@ public class PointUtil {
         return false;
     }
 
-    /**保留小数点后六位
+    /**
+     * 保留小数点后六位
      */
-    private static double retain6(double num){
-        String result = String .format("%.6f", num);
+    private static double retain6(double num) {
+        String result = String.format("%.6f", num);
         return Double.valueOf(result);
     }
 
