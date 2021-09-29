@@ -36,6 +36,7 @@ public class DateTimeUtil {
             timeStamp = calendar.getTimeInMillis();
         } catch (ParseException e) {
             e.printStackTrace();
+            throw new DevelopAssException("时间转换异常，原因：" + e.getMessage());
         }
         return timeStamp;
     }

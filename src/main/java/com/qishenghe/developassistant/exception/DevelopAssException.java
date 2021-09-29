@@ -12,6 +12,11 @@ import lombok.Data;
 public class DevelopAssException extends RuntimeException {
 
     /**
+     * 全局异常前缀
+     */
+    private static final String EXCEPTION_START_WITH = "Develop Ass Exception：";
+
+    /**
      * 错误编码
      */
     private String msgCode;
@@ -28,7 +33,7 @@ public class DevelopAssException extends RuntimeException {
      * @param message 错误信息
      */
     public DevelopAssException(String message) {
-        super(message);
+        super(EXCEPTION_START_WITH + message);
     }
 
     /**
@@ -38,7 +43,7 @@ public class DevelopAssException extends RuntimeException {
      * @param msgCode 错误编码
      */
     public DevelopAssException(String message, String msgCode) {
-        super(message);
+        super(EXCEPTION_START_WITH + message);
         this.msgCode = msgCode;
     }
 
