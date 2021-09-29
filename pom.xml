@@ -7,9 +7,9 @@
     <groupId>com.github.qishenghe</groupId>
     <artifactId>develop-ass</artifactId>
     <version>1.0.3</version>
-    <name>develop-assistant</name>
+    <name>develop-ass</name>
     <description>This is a develop-assistant</description>
-    <url>https://github.com/qishenghe/munin.git</url>
+    <url>https://github.com/qishenghe/develop-ass.git</url>
 
     <properties>
         <java.version>1.8</java.version>
