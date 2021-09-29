@@ -6,9 +6,24 @@
 
     <groupId>com.github.qishenghe</groupId>
     <artifactId>develop-ass</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
+    <name>develop-assistant</name>
+    <description>This is a develop-assistant</description>
+    <url>https://github.com/qishenghe/munin.git</url>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencies>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- Http Client -->
         <dependency>
@@ -47,32 +62,42 @@
 
     </dependencies>
 
-
-    <name>develop-assistant</name>
-    <description>This is a develop-assistant</description>
-    <url>http://www.baidu.com</url>
+    <!-- 开源许可协议 -->
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+
+    <!-- SCM信息 -->
+    <scm>
+        <connection>scm:git:https://github.com/qishenghe/munin.git</connection>
+        <developerConnection>scm:git:https://github.com/qishenghe/munin.git</developerConnection>
+        <url>git:https://github.com/qishenghe/munin.git</url>
+    </scm>
+
+    <!-- 开发者信息 -->
     <developers>
         <developer>
             <name>qishenghe</name>
             <email>1768237708@qq.com</email>
+            <organization>qishenghe</organization>
         </developer>
     </developers>
-    <scm>
-        <connection>scm:git:git@github.com:selfly/dexcoder-assistant.git</connection>
-        <developerConnection>scm:git:git@github.com:selfly/dexcoder-assistant.git</developerConnection>
-        <url>git@github.com:selfly/dexcoder-assistant.git</url>
-    </scm>
 
     <profiles>
         <profile>
             <id>release</id>
             <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/java</directory>
+                        <includes>
+                            <include>**/*.properties</include>
+                        </includes>
+                    </resource>
+                </resources>
                 <plugins>
                     <!-- Source -->
                     <plugin>
@@ -92,14 +117,15 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.10.4</version>
+                        <version>2.9.1</version>
                         <configuration>
                             <show>private</show>
                             <nohelp>true</nohelp>
                             <charset>UTF-8</charset>
                             <encoding>UTF-8</encoding>
                             <docencoding>UTF-8</docencoding>
-                            <additionalparam>-Xdoclint:none</additionalparam>  <!-- TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                            <!-- 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
                         </configuration>
                         <executions>
                             <execution>
@@ -124,27 +150,37 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- JDK -->
+                    <!--Compiler -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.0</version>
                         <configuration>
+                            <source>1.8</source>
+                            <target>1.8</target>
                             <fork>true</fork>
-                            <executable>
-                                D:\JDK\bin\javac.exe
-                            </executable>
+                            <verbose>true</verbose>
                             <encoding>UTF-8</encoding>
+                            <showWarnings>false</showWarnings>
                         </configuration>
+                    </plugin>
+                    <!--Release -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>2.5.1</version>
                     </plugin>
                 </plugins>
             </build>
             <distributionManagement>
                 <snapshotRepository>
-                    <id>oss</id>
+                    <id>sonatype-nexus-snapshots</id>
+                    <name>Sonatype Nexus Snapshots</name>
                     <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
                 </snapshotRepository>
                 <repository>
-                    <id>oss</id>
+                    <id>sonatype-nexus-staging</id>
+                    <name>Nexus Release Repository</name>
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
