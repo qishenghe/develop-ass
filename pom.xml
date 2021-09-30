@@ -25,6 +25,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Jts 几何计算工具 项目文档地址：https://locationtech.github.io/jts/javadoc/ -->
+        <dependency>
+            <groupId>org.locationtech.jts</groupId>
+            <artifactId>jts-core</artifactId>
+            <version>1.18.0</version>
+        </dependency>
+
         <!-- Http Client -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
