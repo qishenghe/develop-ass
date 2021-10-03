@@ -16,7 +16,7 @@ import java.util.List;
  * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
  */
 @Data
-public class SimpleFileUtil {
+public class FileUtil {
 
     /**
      * 默认编码字符集
@@ -32,7 +32,7 @@ public class SimpleFileUtil {
      * 无参构造函数
      * 注：默认编码字符集【UTF-8】
      */
-    public SimpleFileUtil() {
+    public FileUtil() {
         this.charset = Charset.forName(DEFAULT_CHARSET_NAME);
     }
 
@@ -41,7 +41,7 @@ public class SimpleFileUtil {
      *
      * @param charset 编码字符集
      */
-    public SimpleFileUtil(Charset charset) {
+    public FileUtil(Charset charset) {
         this.charset = charset;
     }
 
@@ -60,7 +60,7 @@ public class SimpleFileUtil {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            throw new DevelopAssException(SimpleFileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         }
         return lineList;
     }
@@ -78,7 +78,7 @@ public class SimpleFileUtil {
             return new FileInputStream(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            throw new DevelopAssException(SimpleFileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         }
     }
 
@@ -114,7 +114,7 @@ public class SimpleFileUtil {
             baoStream.close();
         } catch (Exception e) {
             e.printStackTrace();
-            throw new DevelopAssException(SimpleFileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         } finally {
             try {
                 if (fis != null) {
@@ -157,7 +157,7 @@ public class SimpleFileUtil {
             bw.close();
         } catch (IOException e) {
             e.printStackTrace();
-            throw new DevelopAssException(SimpleFileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         }
         return flag;
     }
