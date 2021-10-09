@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
  *
  * @author qishenghe
  * @date 2020/12/29 19:09
- * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
+ * @change 2020/12/29 19:09 by qishenghe for init
  */
 public class NumberFormatUtil {
 
@@ -30,7 +30,7 @@ public class NumberFormatUtil {
      * @return 处理结果
      * @author qishenghe
      * @date 2021/9/29 15:51
-     * @change 2021/9/29 15:51 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/29 15:51 by qishenghe for init
      * @since 1.0.0
      */
     public static String mathKeepValidNum(double num, int n) {

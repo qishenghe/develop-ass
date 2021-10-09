@@ -13,7 +13,7 @@ import java.security.NoSuchAlgorithmException;
  *
  * @author qishenghe
  * @date 2020/12/29 19:09
- * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
+ * @change 2020/12/29 19:09 by qishenghe for init
  */
 @Data
 public class Md5Util {
@@ -71,7 +71,7 @@ public class Md5Util {
      * @return 加密结果
      * @author qishenghe
      * @date 2021/9/29 18:45
-     * @change 2021/9/29 18:45 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/29 18:45 by qishenghe for init
      * @since 1.0.0
      */
     public String encryption(String str) {
@@ -87,7 +87,7 @@ public class Md5Util {
      * @return 加密结果
      * @author qishenghe
      * @date 2021/9/29 18:41
-     * @change 2021/9/29 18:41 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/29 18:41 by qishenghe for init
      * @since 1.0.0
      */
     public String encryption(String str, Charset charset, int base) {

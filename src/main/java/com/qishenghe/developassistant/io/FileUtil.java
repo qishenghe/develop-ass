@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author qishenghe
  * @date 2020/12/29 19:09
- * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
+ * @change 2020/12/29 19:09 by qishenghe for init
  */
 @Data
 public class FileUtil {

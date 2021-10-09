@@ -11,7 +11,7 @@ import java.util.Calendar;
  *
  * @author qishenghe
  * @date 2020/12/29 19:09
- * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
+ * @change 2020/12/29 19:09 by qishenghe for init
  */
 public class DateTimeUtil {
 
@@ -23,7 +23,7 @@ public class DateTimeUtil {
      * @return 毫秒时间戳
      * @author qishenghe
      * @date 2021/9/29 14:32
-     * @change 2021/9/29 14:32 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/29 14:32 by qishenghe for init
      * @since 1.0.0
      */
     public static long dateTimeToTimeStamp(String dateTime, String pattern) {
@@ -48,7 +48,7 @@ public class DateTimeUtil {
      * @return 日期时间
      * @author qishenghe
      * @date 2021/9/29 14:32
-     * @change 2021/9/29 14:32 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/29 14:32 by qishenghe for init
      * @since 1.0.0
      */
     public static String timeStampToDateTime(long timeStamp, String pattern) {

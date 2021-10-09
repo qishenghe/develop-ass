@@ -12,7 +12,7 @@ import org.locationtech.jts.io.WKTReader;
  *
  * @author qishenghe
  * @date 2020/12/29 19:09
- * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
+ * @change 2020/12/29 19:09 by qishenghe for init
  */
 public class GeometryWktUtil {
 
@@ -22,9 +22,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 相交：true，不相交：false
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:32
-     * @change 2021/1/11 15:32 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:32 by qishenghe for init
      * @since 1.0.0
      */
     public static boolean judgeIntersects(String wkt1, String wkt2) throws ParseException {
@@ -39,9 +39,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 包含：true，不包含：false
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:36
-     * @change 2021/1/11 15:36 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:36 by qishenghe for init
      * @since 1.0.0
      */
     public static boolean judgeContains(String wkt1, String wkt2) throws ParseException {
@@ -56,9 +56,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 覆盖：true，不覆盖：false
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:36
-     * @change 2021/1/11 15:36 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:36 by qishenghe for init
      * @since 1.0.0
      */
     public static boolean judgeCovers(String wkt1, String wkt2) throws ParseException {
@@ -73,9 +73,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 穿过：true，不穿过：false
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:36
-     * @change 2021/1/11 15:36 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:36 by qishenghe for init
      * @since 1.0.0
      */
     public static boolean judgeCrosses(String wkt1, String wkt2) throws ParseException {
@@ -90,9 +90,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 相等：true，不相等：false
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:36
-     * @change 2021/1/11 15:36 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:36 by qishenghe for init
      * @since 1.0.0
      */
     public static boolean judgeEquals(String wkt1, String wkt2) throws ParseException {
@@ -106,9 +106,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何图形
      * @return 各点的平面直角坐标系坐标
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:44
-     * @change 2021/1/11 15:44 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:44 by qishenghe for init
      * @since 1.0.0
      */
     public static Coordinate[] getCoordinate(String wkt) throws ParseException {
@@ -121,9 +121,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何
      * @return 反转几何对象
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:46
-     * @change 2021/1/11 15:46 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:46 by qishenghe for init
      * @since 1.0.0
      */
     public static Geometry getReverse(String wkt) throws ParseException {
@@ -136,9 +136,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何
      * @return 凸包几何
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:48
-     * @change 2021/1/11 15:48 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:48 by qishenghe for init
      * @since 1.0.0
      */
     public static Geometry getConvexHull(String wkt) throws ParseException {
@@ -151,9 +151,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何
      * @return 几何质心
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:50
-     * @change 2021/1/11 15:50 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:50 by qishenghe for init
      * @since 1.0.0
      */
     public static Point getCentroid(String wkt) throws ParseException {
@@ -166,9 +166,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何
      * @return 图形个数
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:51
-     * @change 2021/1/11 15:51 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:51 by qishenghe for init
      * @since 1.0.0
      */
     public static int getGeometriesNum(String wkt) throws ParseException {
@@ -181,9 +181,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何
      * @return 定点个数
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:53
-     * @change 2021/1/11 15:53 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:53 by qishenghe for init
      * @since 1.0.0
      */
     public static int getPointNum(String wkt) throws ParseException {
@@ -196,9 +196,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何
      * @return 类型
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:54
-     * @change 2021/1/11 15:54 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:54 by qishenghe for init
      * @since 1.0.0
      */
     public static String getGeometryType(String wkt) throws ParseException {
@@ -211,9 +211,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何图形
      * @return 面积
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 16:05
-     * @change 2021/1/11 16:05 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 16:05 by qishenghe for init
      * @since 1.0.0
      */
     public static double getArea(String wkt) throws ParseException {
@@ -226,9 +226,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何图形
      * @return 周长
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 16:05
-     * @change 2021/1/11 16:05 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 16:05 by qishenghe for init
      * @since 1.0.0
      */
     public static double getLength(String wkt) throws ParseException {
@@ -242,9 +242,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 交集计算结果
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:56
-     * @change 2021/1/11 15:56 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:56 by qishenghe for init
      * @since 1.0.0
      */
     public static Geometry calIntersection(String wkt1, String wkt2) throws ParseException {
@@ -259,9 +259,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 并集计算结果
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 16:02
-     * @change 2021/1/11 16:02 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 16:02 by qishenghe for init
      * @since 1.0.0
      */
     public static Geometry calUnion(String wkt1, String wkt2) throws ParseException {
@@ -276,9 +276,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 差异计算结果
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:56
-     * @change 2021/1/11 15:56 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:56 by qishenghe for init
      * @since 1.0.0
      */
     public static Geometry calDifference(String wkt1, String wkt2) throws ParseException {
@@ -293,9 +293,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 差异计算结果
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 15:56
-     * @change 2021/1/11 15:56 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 15:56 by qishenghe for init
      * @since 1.0.0
      */
     public static Geometry calSymDifference(String wkt1, String wkt2) throws ParseException {
@@ -310,9 +310,9 @@ public class GeometryWktUtil {
      * @param wkt1 几何图形1
      * @param wkt2 几何图形2
      * @return 两图形之间距离
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 16:03
-     * @change 2021/1/11 16:03 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 16:03 by qishenghe for init
      * @since 1.0.0
      */
     public static double calDistance(String wkt1, String wkt2) throws ParseException {
@@ -326,9 +326,9 @@ public class GeometryWktUtil {
      *
      * @param wkt 几何 Wkt
      * @return 几何对象
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 16:09
-     * @change 2021/1/11 16:09 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 16:09 by qishenghe for init
      * @since 1.0.0
      */
     public static Geometry transGeometryWkt(String wkt) throws ParseException {
@@ -340,9 +340,9 @@ public class GeometryWktUtil {
      *
      * @param geo 集合对象
      * @return wkt String
-     * @author qishenghe@bonc.com.cn
+     * @author qishenghe
      * @date 2021/1/11 16:11
-     * @change 2021/1/11 16:11 by qishenghe@bonc.com.cn for init
+     * @change 2021/1/11 16:11 by qishenghe for init
      * @since 1.0.0
      */
     public static String transWktGeometry(Geometry geo) {

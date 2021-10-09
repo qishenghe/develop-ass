@@ -8,7 +8,7 @@ import java.util.Random;
  *
  * @author qishenghe
  * @date 2020/12/29 19:09
- * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
+ * @change 2020/12/29 19:09 by qishenghe for init
  */
 public class RandomUtil {
 
@@ -21,7 +21,7 @@ public class RandomUtil {
      * @return 随机数
      * @author qishenghe
      * @date 2021/9/29 15:33
-     * @change 2021/9/29 15:33 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/29 15:33 by qishenghe for init
      * @since 1.0.0
      */
     public static double getRandomNumberDouble(double min, double max, long seed) {
@@ -60,7 +60,7 @@ public class RandomUtil {
      * @return 随机数
      * @author qishenghe
      * @date 2021/9/29 15:39
-     * @change 2021/9/29 15:39 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/29 15:39 by qishenghe for init
      * @since 1.0.0
      */
     public static int getRandomNumberInteger(int min, int max, long seed) {

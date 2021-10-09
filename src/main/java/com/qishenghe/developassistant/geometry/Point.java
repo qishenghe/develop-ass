@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author qishenghe
  * @date 2020/12/29 19:09
- * @change 2020/12/29 19:09 by qishenghe@bonc.com.cn for init
+ * @change 2020/12/29 19:09 by qishenghe for init
  */
 @Data
 public class Point implements Serializable {
@@ -92,7 +92,7 @@ public class Point implements Serializable {
      * @return value
      * @author qishenghe
      * @date 2021/9/30 11:11
-     * @change 2021/9/30 11:11 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/30 11:11 by qishenghe for init
      * @since 1.0.0
      */
     public double getDimensionValue(int dimensionNum) {
@@ -106,7 +106,7 @@ public class Point implements Serializable {
      * @return value
      * @author qishenghe
      * @date 2021/9/30 11:11
-     * @change 2021/9/30 11:11 by qishenghe@bonc.com.cn for init
+     * @change 2021/9/30 11:11 by qishenghe for init
      * @since 1.0.0
      */
     public boolean setDimensionValue(int dimensionNum, double value) {
