@@ -1,6 +1,5 @@
 package com.qishenghe.developassistant.geometry;
 
-import com.qishenghe.developassistant.exception.DevelopAssException;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -111,7 +110,7 @@ public class Point implements Serializable {
      */
     public boolean setDimensionValue(int dimensionNum, double value) {
         if (dimensionNum >= this.dimensionArr.length) {
-            throw new DevelopAssException(Point.class.getName() + " : cause : " + "维度数组越界，暂不支持自动扩容");
+            throw new RuntimeException(Point.class.getName() + " : cause : " + "维度数组越界，暂不支持自动扩容");
         } else {
             this.dimensionArr[dimensionNum] = value;
             return true;

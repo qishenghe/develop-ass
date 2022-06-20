@@ -1,6 +1,5 @@
 package com.qishenghe.developassistant.encryption;
 
-import com.qishenghe.developassistant.exception.DevelopAssException;
 import lombok.Data;
 
 import java.math.BigInteger;
@@ -97,7 +96,7 @@ public class Md5Util {
             digest = md5.digest(str.getBytes(charset));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            throw new DevelopAssException(Md5Util.class.getName() + " : cause : " + e.getMessage());
+            throw new RuntimeException(Md5Util.class.getName() + " : cause : " + e.getMessage());
         }
         //16是表示转换为16进制数
         assert digest != null;

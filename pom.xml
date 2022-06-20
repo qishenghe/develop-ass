@@ -6,13 +6,15 @@
 
     <groupId>com.github.qishenghe</groupId>
     <artifactId>develop-ass</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
     <name>develop-ass</name>
     <description>This is a develop-assistant</description>
     <url>https://github.com/qishenghe/develop-ass.git</url>
 
     <properties>
         <java.version>1.8</java.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
     <dependencies>

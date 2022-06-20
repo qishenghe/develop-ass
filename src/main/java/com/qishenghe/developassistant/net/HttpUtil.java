@@ -1,6 +1,5 @@
 package com.qishenghe.developassistant.net;
 
-import com.qishenghe.developassistant.exception.DevelopAssException;
 import com.qishenghe.developassistant.io.FileUtil;
 import lombok.Data;
 import org.apache.commons.collections4.CollectionUtils;
@@ -95,7 +94,7 @@ public class HttpUtil {
 
         } catch (URISyntaxException e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + "url构建异常");
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + "url构建异常");
         }
         return result;
     }
@@ -157,7 +156,7 @@ public class HttpUtil {
             result = send(httpPost, headerList);
         } catch (URISyntaxException e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + "url构建异常");
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + "url构建异常");
         }
         return result;
     }
@@ -244,7 +243,7 @@ public class HttpUtil {
 
         } catch (URISyntaxException e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + "自定义url解析异常");
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + "自定义url解析异常");
         }
 
         return uriBuilder;
@@ -280,7 +279,7 @@ public class HttpUtil {
             result = EntityUtils.toString(response.getEntity(), this.charset);
         } catch (IOException e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + "Http请求执行异常");
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + "Http请求执行异常");
         }
         return result;
     }

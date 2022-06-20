@@ -1,6 +1,5 @@
 package com.qishenghe.developassistant.io;
 
-import com.qishenghe.developassistant.exception.DevelopAssException;
 import lombok.Data;
 
 import java.io.*;
@@ -60,7 +59,7 @@ public class FileUtil {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         }
         return lineList;
     }
@@ -78,7 +77,7 @@ public class FileUtil {
             return new FileInputStream(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         }
     }
 
@@ -114,7 +113,7 @@ public class FileUtil {
             baoStream.close();
         } catch (Exception e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         } finally {
             try {
                 if (fis != null) {
@@ -157,7 +156,7 @@ public class FileUtil {
             bw.close();
         } catch (IOException e) {
             e.printStackTrace();
-            throw new DevelopAssException(FileUtil.class.getName() + " : cause : " + e.getMessage());
+            throw new RuntimeException(FileUtil.class.getName() + " : cause : " + e.getMessage());
         }
         return flag;
     }

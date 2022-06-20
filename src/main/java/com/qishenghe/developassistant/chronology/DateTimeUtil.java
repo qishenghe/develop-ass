@@ -1,7 +1,5 @@
 package com.qishenghe.developassistant.chronology;
 
-import com.qishenghe.developassistant.exception.DevelopAssException;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -35,7 +33,7 @@ public class DateTimeUtil {
             timeStamp = calendar.getTimeInMillis();
         } catch (ParseException e) {
             e.printStackTrace();
-            throw new DevelopAssException("时间处理工具：异常：原因：" + e.getMessage());
+            throw new RuntimeException("时间处理工具：异常：原因：" + e.getMessage());
         }
         return timeStamp;
     }

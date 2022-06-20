@@ -1,6 +1,5 @@
 package com.qishenghe.developassistant.geoscience;
 
-import com.qishenghe.developassistant.exception.DevelopAssException;
 import com.qishenghe.developassistant.geometry.Point;
 
 /**
@@ -32,7 +31,7 @@ public class LngLatTranUtil {
         } else if (LngLatCoordinateEnum.COORDINATE_GPS == source) {
             gpsPoint = point;
         } else {
-            throw new DevelopAssException(Point.class.getName() + " : cause : " + "不支持的坐标系");
+            throw new RuntimeException(Point.class.getName() + " : cause : " + "不支持的坐标系");
         }
 
         Point targetPoint;
@@ -45,7 +44,7 @@ public class LngLatTranUtil {
         } else if (LngLatCoordinateEnum.COORDINATE_GPS == source) {
             targetPoint = gpsPoint;
         } else {
-            throw new DevelopAssException(Point.class.getName() + " : cause : " + "不支持的坐标系");
+            throw new RuntimeException(Point.class.getName() + " : cause : " + "不支持的坐标系");
         }
 
         return targetPoint;
@@ -104,28 +103,15 @@ public class LngLatTranUtil {
      * 常数集
      */
     private static final double PI = 3.1415926535897932384626;
-    private static double X_PI = 3.14159265358979324 * 3000.0 / 180.0;
-    private static double A = 6378245.0;
-    private static double EE = 0.00669342162296594323;
+    private static final double X_PI = 3.14159265358979324 * 3000.0 / 180.0;
+    private static final double A = 6378245.0;
+    private static final double EE = 0.00669342162296594323;
 
     /**
      * (GPS-84) to 火星坐标系 (GCJ-02)
      */
     private static double[] gps84ToGcj02(double lat, double lon) {
-        if (outOfChina(lat, lon)) {
-            return new double[]{lat, lon};
-        }
-        double dLat = transformLat(lon - 105.0, lat - 35.0);
-        double dLon = transformLon(lon - 105.0, lat - 35.0);
-        double radLat = lat / 180.0 * PI;
-        double magic = Math.sin(radLat);
-        magic = 1 - EE * magic * magic;
-        double sqrtMagic = Math.sqrt(magic);
-        dLat = (dLat * 180.0) / ((A * (1 - EE)) / (magic * sqrtMagic) * PI);
-        dLon = (dLon * 180.0) / (A / sqrtMagic * Math.cos(radLat) * PI);
-        double mgLat = lat + dLat;
-        double mgLon = lon + dLon;
-        return new double[]{mgLat, mgLon};
+        return transform(lat, lon);
     }
 
     /**
